@@ -7,8 +7,6 @@
     <title>권혁준과 유혜인의 결혼식</title>
     <meta content="저희 둘의 결혼식에 여러분을 초대합니다" name="description"/>
     <meta property="og:image" content="images/main-background.jpg">
-    <meta property="fb:app_id" content="781066922265598" />
-    <meta property="fb:admins" content="Choi.Anderson"/>
     <link href="images/favicon/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
     <link href="images/favicon/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
     <link href="images/favicon/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
@@ -24,72 +22,11 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <script src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js" type="text/javascript"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/remarkable/1.7.1/remarkable.js" type="text/javascript"></script>
-    <script type="text/javascript">
-        function sendMail() {
-
-            (function () {
-                emailjs.init("user_yjLL5xG0A3kkOCH5BGIDh");
-                emailjs.send("wedding-mail", "gift_send", {
-                    name: $("#sender-name").value,
-                    gift: $("#gift-name").text(),
-                    message: $("#sender-message").value
-                }).then(function (response) {
-                    console.log("SUCCESS. status=%d, text=%s", response.status, response.text);
-                }, function (err) {
-                    console.log("FAILED. error=", err);
-                });
-            })();
-        }
-
-        function findGetParameter(parameterName) {
-            var result = null,
-                tmp = [];
-            location.search
-                .substr(1)
-                .split("&")
-                .forEach(function (item) {
-                  tmp = item.split("=");
-                  if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
-                });
-            return result;
-        }
-
-        $(document).ready(function () {
-
-            function getText(){
-                var result = null;
-                $.ajax( { url: "https://raw.githubusercontent.com/AndersonChoi/wedding-card/master/README.md",
-                        type: 'get',
-                        dataType: 'html',
-                        async: false,
-                        success: function(data) { result = data; }
-                    }
-                );
-                FileReady = true;
-                return result;
-            }
-            var markdown_source = getText();
-            var comment_contents = markdown_source.split("축하의 말")[1];
-
-            var md = new Remarkable();
-            $("#comments").append(md.render(comment_contents));
-
-            
-            if(findGetParameter('gift')=='false'){
-                $('#gifts').hide();
-            }
-        });
-
-
-
-
-    </script>
 </head>
 
 <body id="top">
 <header></header>
 <div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v3.2"></script>
 <div class="page-content">
     <div class="div">
         <div class="ww-home-page" id="home">
@@ -119,7 +56,7 @@
                         <ul class="navbar-nav ml-auto">
                             <li class="nav-item"><a class="nav-link smooth-scroll" href="#home">Home</a></li>
                             <li class="nav-item"><a class="nav-link smooth-scroll" href="#couple">Couple</a></li>
-                            <li class="nav-item"><a class="nav-link smooth-scroll" href="#events">Events</a></li>
+                            <li class="nav-item"><a class="nav-link smooth-scroll" href="#events">Invitation</a></li>
                             <li class="nav-item"><a class="nav-link smooth-scroll" href="#gallery">Gallery</a></li>
                         </ul>
                     </div>
@@ -128,7 +65,7 @@
         </div>
         <div class="ww-section" id="couple">
             <div class="container">
-                <h2 class="h1 text-center pb-3 ww-title" style="font-family: 'Noto Serif KR', serif;">신랑 & 신부</h2>
+                <h2 class="h1 text-center pb-3 ww-title" style="font-family: 'Noto Serif KR', serif;"> Bride & Groom </h2>
                 <div class="row text-center">
                     <div class="col-md-6">
                         <div class="mt-3">
@@ -149,11 +86,21 @@
         </div>
         <div class="ww-section bg-light" id="events">
             <div class="container ww-wedding-event">
-                <h2 class="h1 text-center pb-3 ww-title" style="font-family: 'Noto Serif KR', serif;">초대합니다</h2>
+                <h2 class="h1 text-center pb-3 ww-title" style="font-family: 'Noto Serif KR', serif;">Invitation</h2>
+		<div class="row">
+                    <div class="h1">
+				    <video controls width="100%">
+					    <source src="images/movie.mp4"
+						    type="video/mp4">
+					    Sorry, your browser doesn't support embedded videos.
+				    </video>
+		    </div>
+		</div>
+
 		<div class="row">
                     <div class="col-md-7 col-sm-12">
                         <div class="my-3">
-                            <div class="h4">웨딩 본식</div>
+				<div class="h4">웨딩 본식</div>
                             <ul>
                                 <li>
                                     <i class="text-muted fas fa-map-marker-alt"></i>
@@ -197,7 +144,7 @@
         <div class="ww-section" id="gallery">
             <div class="ww-photo-gallery">
                 <div class="container">
-                    <h2 class="h1 text-center pb-3 ww-title" style="font-family: 'Noto Serif KR', serif;">포토 갤러리</h2>
+                    <h2 class="h1 text-center pb-3 ww-title" style="font-family: 'Noto Serif KR', serif;">Gallery</h2>
                     <div class="ww-gallery">
                         <div class="card-columns">
                             <div class="card" data-groups="[&quot;party&quot;,&quot;wedding&quot;]">
